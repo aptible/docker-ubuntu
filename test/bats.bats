@@ -4,6 +4,6 @@
   which bats
 }
 
-@test "Bats should be v0.3.1" {
-  bats -v | grep '0\.3\.1'
+@test "Bats should be v0.4.0" {
+  bats -v | grep '0\.4\.0'
 }
