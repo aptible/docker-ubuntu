@@ -7,7 +7,6 @@
 }
 
 @test "It should install a BASH version protected from CVE-2014-7169" {
-  skip
   export X='() { (a)=>\'
   run /bin/bash -c "echo echo RCE"
   ! [[ $(cat echo) =~ "RCE" ]]
