@@ -9,6 +9,7 @@ RUN apt-get install -y git
 # Install latest security updates now, and on build
 RUN grep security /etc/apt/sources.list > /tmp/security.list
 RUN apt-get -y -o Dir::Etc::SourceList=/tmp/security.list upgrade
+ONBUILD RUN apt-get -y -o Dir::Etc::SourceList=/tmp/security.list update
 ONBUILD RUN apt-get -y -o Dir::Etc::SourceList=/tmp/security.list upgrade
 
 # Install Bats
