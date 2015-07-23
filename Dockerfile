@@ -1,10 +1,10 @@
 FROM ubuntu:12.04
 MAINTAINER Frank Macreery <frank@macreery.com>
 
-RUN apt-get update
+ADD files/usr/bin/apt-install /usr/bin/apt-install
 
 # Install Git
-RUN apt-get install -y git
+RUN apt-install git
 
 # Install latest security updates now, and on build
 RUN grep security /etc/apt/sources.list > /tmp/security.list
