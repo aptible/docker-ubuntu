@@ -9,6 +9,7 @@ env:
     - TAG=12.04
     - TAG=14.04
     - TAG=16.04
+    - TAG=xenial-20171006
 
 script:
   - make build
