@@ -3,6 +3,11 @@ MAINTAINER Frank Macreery <frank@macreery.com>
 
 ADD files/usr/bin/apt-install /usr/bin/apt-install
 
+# Allow of well EOL versions to build.
+<% if ENV['USE_EOL_REPOS'] == "true" %>
+RUN sed -i.bak -r 's/(archive|security).ubuntu.com/old-releases.ubuntu.com/g' /etc/apt/sources.list
+<% end %>
+
 # Install latest security updates now, and on build
 # During build, we use AllowRedirect to fix 4371-1.
 
