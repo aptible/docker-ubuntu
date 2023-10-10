@@ -11,6 +11,7 @@ env:
     - TAG=16.04
     - TAG=18.04
     - TAG=20.04
+    - TAG=22.04
 
 script:
   - make build
