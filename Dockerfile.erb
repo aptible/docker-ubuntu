@@ -34,7 +34,6 @@ RUN git clone https://github.com/sstephenson/bats.git /tmp/bats && \
 # Integration tests
 
 # Setting tag for testing
-ENV TAG <%= ENV.fetch 'TAG' %>
 ENV LIBC_MIN <%= ENV.fetch 'LIBC_MIN' %>
 ENV LIBSSL_MIN <%= ENV.fetch 'LIBSSL_MIN' %>
 ADD test /tmp/test
