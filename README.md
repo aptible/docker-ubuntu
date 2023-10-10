@@ -21,6 +21,7 @@ for further information.
 
 ## Available Tags
 
+* `20.04`: Ubuntu 20.04 (LTS)
 * `18.04`: Ubuntu 18.04 (LTS)
 * `16.04`: Ubuntu 16.04 (LTS)
 * `latest`: Ubuntu 14.04 (LTS)
