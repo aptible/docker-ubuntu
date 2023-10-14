@@ -16,6 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       IMG_NAME: aptible/ubuntu
+      TAG: ${{ matrix.ubuntu }}
 
     steps:
 

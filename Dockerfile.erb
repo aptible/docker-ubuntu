@@ -1,4 +1,4 @@
-FROM --platform=linux/x86_64 ubuntu:<%= ENV.fetch 'TAG' %>
+FROM --platform=linux/x86_64 ubuntu:${TAG}
 
 ADD files/usr/bin/apt-install /usr/bin/apt-install
 
