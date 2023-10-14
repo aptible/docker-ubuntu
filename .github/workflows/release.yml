@@ -16,7 +16,7 @@ jobs:
       REGISTRY: quay.io
       REPOSITORY: aptible/ubuntu
       PUSH_REGISTRIES: $(REGISTRY) docker.io
-      TAG: ${{ matrix.ubuntu }}
+      TAG: '${{ matrix.ubuntu }}'
 
     steps:
 
