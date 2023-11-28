@@ -16,31 +16,31 @@ jobs:
           - version: '12.04'
             libc_min: '2.15-0ubuntu10.13'
             libssl_min: '1.0.1-4ubuntu5.12'
-            use_eol_version: [true]
+            use_eol_version: "true"
           - version: '14.04'
             libc_min: '2.15-0ubuntu10.13'
             libssl_min: '1.0.1-4ubuntu5.12'
-            use_eol_version: [false]
+            use_eol_version: "false"
           - version: '16.04'
             libc_min: '2.21-0ubuntu6'
             libssl_min: '1.0.1f-1ubuntu2'
-            use_eol_version: [false]
+            use_eol_version: "false"
           - version: '18.04'
             libc_min: '2.21-0ubuntu6'
             libssl_min: '1.0.1f-1ubuntu2'
-            use_eol_version: [false]
+            use_eol_version: "false"
           - version: '20.04'
             libc_min: '2.31-0ubuntu9.9'
             libssl_min: ''
-            use_eol_version: [false]
+            use_eol_version: "false"
           - version: '22.04'
             libc_min: '2.35-0ubuntu3.3'
             libssl_min: ''
-            use_eol_version: [false]
+            use_eol_version: "false"
           - version: 'latest'
             libc_min: '2.35-0ubuntu3.3'
             libssl_min: ''
-            use_eol_version: [false]
+            use_eol_version: "false"
     runs-on: ubuntu-latest
     env:
       REPOSITORY: ubuntu
