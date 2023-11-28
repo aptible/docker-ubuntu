@@ -1,11 +1,12 @@
+ARG TAG
 FROM --platform=linux/x86_64 ubuntu:${TAG}
 
 ADD files/usr/bin/apt-install /usr/bin/apt-install
 
 # Allow of well EOL versions to build.
-<% if ENV['USE_EOL_REPOS'] == "true" %>
-RUN sed -i.bak -r 's/(archive|security).ubuntu.com/old-releases.ubuntu.com/g' /etc/apt/sources.list
-<% end %>
+ARG USE_EOL_REPOS
+ENV USE_EOL_REPOS=${USE_EOL_REPOS}
+RUN if [ "$USE_EOL_REPOS" = true ]; then sed -i.bak -r 's/(archive|security).ubuntu.com/old-releases.ubuntu.com/g' /etc/apt/sources.list; fi
 
 # Install latest security updates now, and on build
 # During build, we use AllowRedirect to fix 4371-1.
@@ -34,7 +35,9 @@ RUN git clone https://github.com/sstephenson/bats.git /tmp/bats && \
 # Integration tests
 
 # Setting tag for testing
-ENV LIBC_MIN <%= ENV.fetch 'LIBC_MIN' %>
-ENV LIBSSL_MIN <%= ENV.fetch 'LIBSSL_MIN' %>
+ARG LIBC_MIN
+ENV LIBC_MIN=${LIBC_MIN}
+ARG LIBSSL_MIN
+ENV LIBSSL_MIN=${LIBSSL_MIN}
 ADD test /tmp/test
 RUN bats /tmp/test
